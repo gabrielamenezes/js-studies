@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <li class="item">Arroz</li>
+    <li class="item">Batata</li>
+    <li class="item">Feijão</li>
+</body>
+
+<script>
+    const items = Array.from(document.querySelectorAll('.item')) //transformando htmlcollection em array
+    console.log(items) 
+
+    items.forEach(item => {
+        item.addEventListener('click', onItemClick) //para cada item clicado, será executada essa função (onItemClick)
+    })
+
+
+    function onItemClick(event) {
+        console.log('Clicou no item ' + event.target.innerHTML)
+    }
+</script>
+</html>
