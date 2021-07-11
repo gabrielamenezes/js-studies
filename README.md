@@ -6,7 +6,8 @@ O objetivo desse repositório é organizar algumas teorias importantes do javasc
 ## Sumário
 1. [Hoisting](#hoisting)
 2. [Escopo](#escopo)
-3. [Variáveis](#variaveis) 
+3. [Variáveis](#variaveis)
+4. [Arrow Functions](#arrowfunc)
 
 <h2 id="hoisting">Hoisting :fishing_pole_and_fish:</h2>
 
@@ -172,3 +173,28 @@ Imagine que o escopo é uma caixa e tudo que for criado nessa caixa pode ser ace
     num = 8; // ❌ Não pode ser reatribuída porque é const
 ```
 
+<h2 id="arrowfunc">Arrow Functions :arrow_right:</h2>
+
+### O que são arrow functions?
+Uma nova forma de escrita de uma função, sempre é uma função anônima
+
+```js
+
+const sum = (number1, number2) => {
+    return number1 + number2;
+}
+
+console.log(sum(10,2)) // OUTPUT: 12
+
+```
+
+### Easter Eggs da Arrow Function
+* retornando sem return
+    * Se você usa uma arrow function sem as chaves, consegue retornar sem usar a <em>keyword</em> return
+
+    ```js
+    const sum = (number1,number2) => number1 + number2;
+
+    console.log(sum(10, 2)) // OUTPUT: 12
+
+    ```
