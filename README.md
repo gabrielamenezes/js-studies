@@ -17,7 +17,7 @@ fonte: https://imasters.com.br/desenvolvimento/escopos-em-javascript
 * Escopo Local
     * Uma variável se torna local quando ela é declarada dentro de uma função, de tal maneira a qual ela somente estará <strong> acessível dentro dessa função.</strong>
 
-```
+```js
 
     function foo() {
         var name = 'Gabriela'
