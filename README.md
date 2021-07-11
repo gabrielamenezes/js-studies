@@ -71,25 +71,25 @@ Imagine que o escopo é uma caixa e tudo que for criado nessa caixa pode ser ace
 * Escopo Local
     * Uma variável se torna local quando ela é declarada dentro de uma função, de tal maneira a qual ela somente estará <strong> acessível dentro dessa função.</strong>
 
-```js
+    ```js
 
-    function foo() {
-        var name = 'Gabriela'
-        let color = 'Blue'
-        const age = 22
-    }
+        function foo() {
+            var name = 'Gabriela'
+            let color = 'Blue'
+            const age = 22
+        }
 
-    foo();
+        foo();
 
-    //tentando acessar fora do escopo da função
-    console.log(name); // name is not defined
-    console.log(color); // color is not defined
-    console.log(age); // age is not defined
+        //tentando acessar fora do escopo da função
+        console.log(name); // name is not defined
+        console.log(color); // color is not defined
+        console.log(age); // age is not defined
 
-    //    Conclusão: name, color e age não existem fora do escopo da função foo. 
-    //Isso significa, que podemos ter múltiplas funções com variáveis e constantes com o mesmo nome, mas que retornarão valores diferentes.
+        //    Conclusão: name, color e age não existem fora do escopo da função foo. 
+        //Isso significa, que podemos ter múltiplas funções com variáveis e constantes com o mesmo nome, mas que retornarão valores diferentes.
 
-```
+    ```
 
 
 
@@ -142,7 +142,6 @@ Imagine que o escopo é uma caixa e tudo que for criado nessa caixa pode ser ace
 
 
 ```js
-
     if(true) {
         var global = 2; // vaza de dentro do bloco
     }
@@ -161,17 +160,17 @@ Imagine que o escopo é uma caixa e tudo que for criado nessa caixa pode ser ace
     * Sofrem hoisting (são elevadas) para o topo do bloco que foram definidas → porém não é atribuido o valor de undefined como acontece com var → continuam não inicializadas e dão erro caso sejam chamadas antes de suas declarações.
     * A grande diferença entre as duas é que <strong>consts não podem ser reatribuídas</strong> enquanto lets sim.
 
-```js
-    function name() {
-	    console.log(name); // ❌ retorna erro porque ainda não foi inicializada
-	    let name = 'gabriela';
-	    console.log(name); // 👍🏼 gabriela
-	    name = 'gabriela 2'; // 👍🏼 pode ser reatruída
-    }
+    ```js
+        function name() {
+	        console.log(name); // ❌ retorna erro porque ainda não foi inicializada
+	        let name = 'gabriela';
+	        console.log(name); // 👍🏼 gabriela
+	        name = 'gabriela 2'; // 👍🏼 pode ser reatruída
+        }
 
-    const num = 6;
-    num = 8; // ❌ Não pode ser reatribuída porque é const
-```
+        const num = 6;
+        num = 8; // ❌ Não pode ser reatribuída porque é const
+    ```
 
 <h2 id="arrowfunc">Arrow Functions :arrow_right:</h2>
 
@@ -193,8 +192,34 @@ console.log(sum(10,2)) // OUTPUT: 12
     * Se você usa uma arrow function sem as chaves, consegue retornar sem usar a <em>keyword</em> return
 
     ```js
+
     const sum = (number1,number2) => number1 + number2;
 
     console.log(sum(10, 2)) // OUTPUT: 12
+
+    ```
+
+* sem parâmetros
+
+    ```js
+
+    const myName = () => 'Gabriela';
+
+    console.log(myName()); // OUTPUT: Gabriela
+
+    ```
+
+* só um parâmetro
+    * Quando você tem 1 único parâmetro os <strong>parênteses se tornam opcionais</strong>
+
+    ```js 
+        //com parênteses
+
+        const double = (number) => number * 2;
+        console.log(double(20)) // OUTPUT: 40
+
+        //sem parênteses
+        const double = number => number * 2;
+        console.log(double(20)) // OUTPUT: 40
 
     ```
