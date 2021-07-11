@@ -175,6 +175,8 @@ Imagine que o escopo é uma caixa e tudo que for criado nessa caixa pode ser ace
 <h2 id="arrowfunc">Arrow Functions :arrow_right:</h2>
 
 ### O que são arrow functions?
+<em>fonte: [Marco Bruno - YT](https://www.youtube.com/watch?v=3EkS9-P3cIM)</em>
+
 Uma nova forma de escrita de uma função, sempre é uma função anônima
 
 ```js
@@ -221,5 +223,14 @@ console.log(sum(10,2)) // OUTPUT: 12
         //sem parênteses
         const double = number => number * 2;
         console.log(double(20)) // OUTPUT: 40
+
+    ```
+* retornando um JSON sem return
+    * Como um JSON é definido por chaves, elas são confundidas com as chaves da arrow function. Assim, é impossível retornar sem return, já que para não utilizá-lo é necessário retirar as chaves. A opção que temos é trocar as chaves da Arrow Function por parênteses. Exemplo:
+
+    ```js
+        const getPerson() = () => ({name: 'Gabriela', age: 22});
+
+        console.log(getPerson());
 
     ```
