@@ -40,9 +40,11 @@ fonte: https://imasters.com.br/desenvolvimento/escopos-em-javascript
 
 ``` 
 
-Conclusão: name, color e age não existem fora do escopo da função foo. Isso significa, que podemos ter múltiplas funções com variáveis e constantes com o mesmo nome, mas que retornarão valores diferentes.
+    Conclusão: name, color e age não existem fora do escopo da função foo. Isso significa, que podemos ter múltiplas funções com variáveis e constantes com o mesmo nome, mas que retornarão valores diferentes.
 
 
+
+```js
 
     function color() {
         const color = 'pink'
@@ -56,7 +58,8 @@ Conclusão: name, color e age não existem fora do escopo da função foo. Isso 
 
     color();
     color2();
-
+    
+```
 
 
 
