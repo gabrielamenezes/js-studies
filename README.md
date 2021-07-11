@@ -34,11 +34,6 @@ fonte: https://imasters.com.br/desenvolvimento/escopos-em-javascript
 
 ``` 
 
-
-    Conclusão: name, color e age não existem fora do escopo da função foo. Isso significa, que podemos ter múltiplas funções com variáveis e constantes com o mesmo nome, mas que retornarão valores diferentes.
-
-    ```
-
     function color() {
         const color = 'pink'
         console.log(color) // pink
@@ -51,7 +46,9 @@ fonte: https://imasters.com.br/desenvolvimento/escopos-em-javascript
 
     color();
     color2();
-    
-    ```
+
+
+Conclusão: name, color e age não existem fora do escopo da função foo. Isso significa, que podemos ter múltiplas funções com variáveis e constantes com o mesmo nome, mas que retornarão valores diferentes.
+
 * Escopo de Bloco
     * Não existia no JS escopo de bloco. Ou seja, for whiles e ifs não tinham escopo próprio. Porém com o ECMAScript 6 foi possível criar escopos de bloco usando as variáveis let e const, <strong>que são acessíveis somente dentro do bloco.</strong>
