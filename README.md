@@ -7,9 +7,15 @@ Escopo é a acessibilidade de objetos, variáveis e funções em diferentes part
 Em outras palavras, o que determina quais são os dados que podem ser acessados em uma determinada parte do código é o escopo.
 Imagine que o escopo é uma caixa e tudo que for criado nessa caixa pode ser acessado por qualquer objeto dentro da mesma. Um escopo é criado sempre que definimos uma função:
 
+```js
+
     function hello(name) {
         // Isto aqui é um escopo
     }
+
+```
+
+
 fonte: https://imasters.com.br/desenvolvimento/escopos-em-javascript
 
 * Escopo Global
