@@ -1,11 +1,13 @@
 # Estudos Teóricos - Javascript :books:
 O objetivo desse repositório é organizar algumas teorias importantes do javascript, para melhorar a qualidade dos meus estudos e fixar melhor o conteúdo. Fique a vontade para utilizar também!
 
+<em>Inspiration: [@isadorastan - estudos repository](https://github.com/isadorastan/estudos)</em>
+
 ## Hoisting :fishing_pole_and_fish:
 ### O que é o hoisting?
 É o conceito de que as declarações de variável e função são colocadas na memória durante a fase de compilação, mas permanecem exatamente onde você as digitou. Isso, permite que você use uma função ou variável antes mesmo de declará-la.
 
-fonte: https://developer.mozilla.org/pt-BR/docs/Glossary/Hoisting
+<em>fonte: [MDN Glossary - Hoisting](https://developer.mozilla.org/pt-BR/docs/Glossary/Hoisting)</em>
 
 ```js
     myName("Gabriela");
@@ -54,7 +56,7 @@ Imagine que o escopo é uma caixa e tudo que for criado nessa caixa pode ser ace
 ```
 
 
-fonte: https://imasters.com.br/desenvolvimento/escopos-em-javascript
+<em>fonte: https://imasters.com.br/desenvolvimento/escopos-em-javascript</em>
 
 * Escopo Global
     * Uma variável global é definida quando declaramos uma variável fora de qualquer função, assim ela torna <strong>acessível a qualquer parte da nossa aplicação ou site, podendo ser lida e alterada.</strong>
@@ -106,3 +108,20 @@ fonte: https://imasters.com.br/desenvolvimento/escopos-em-javascript
     * Não existia no JS escopo de bloco. Ou seja, for whiles e ifs não tinham escopo próprio. Porém com o ECMAScript 6 foi possível criar escopos de bloco usando as variáveis let e const, <strong>que são acessíveis somente dentro do bloco.</strong>
 
     > Escopos criados por funções são chamados de function scopes, enquanto escopos criados por estruturas de controle são chamados de block scopes.
+
+* Escopos Aninhados
+    * Todo escopo é fechado para acessos externos, de forma que escopos superiores não conseguem acessar escopos internos, mas o contrário é permitido.
+
+    ```js
+
+    function foo() {
+        function bar() {
+
+        }
+    }
+    
+    ```
+
+    Quando criamos outra função dentro da função foo, estamos colocando outra caixa dentro do escopo da função.
+
+## Variáveis :package:
