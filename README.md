@@ -132,3 +132,43 @@ Imagine que o escopo é uma caixa e tudo que for criado nessa caixa pode ser ace
     Quando criamos outra função dentro da função foo, estamos colocando outra caixa dentro do escopo da função.
 
 <h2 id="variaveis">Variáveis :package:</h2>
+
+* var
+    * É içada (veja em [Hoisting](#hoisting))
+    * Tem escopo abrangente -> se for declarada dentro de um bloco -> vaza do escopo
+    * Escopo global e função -> não tem escopo de bloco
+    * Praticamente não são mais usadas em aplicações devidos aos problemas de escopo -> <strong>substituídas por let e const</strong>
+
+
+```js
+
+    if(true) {
+        var global = 2; // vaza de dentro do bloco
+    }
+
+    function teste() {
+        var global = 4;
+        console.log(global); //4
+    }
+
+    console.log(global); //2 -> acessa a que vazou do if
+
+```
+
+* let e const
+    * Tem escopo de bloco e de função
+    * Sofrem hoisting (são elevadas) para o topo do bloco que foram definidas → porém não é atribuido o valor de undefined como acontece com var → continuam não inicializadas e dão erro caso sejam chamadas antes de suas declarações.
+    * A grande diferença entre as duas é que <strong>consts não podem ser reatribuídas</strong> enquanto lets sim.
+
+```js
+    function name() {
+	    console.log(name); // ❌ retorna erro porque ainda não foi inicializada
+	    let name = 'gabriela';
+	    console.log(name); // 👍🏼 gabriela
+	    name = 'gabriela 2'; // 👍🏼 pode ser reatruída
+    }
+
+    const num = 6;
+    num = 8; // ❌ Não pode ser reatribuída porque é const
+```
+
