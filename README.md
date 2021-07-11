@@ -8,6 +8,7 @@ O objetivo desse repositório é organizar algumas teorias importantes do javasc
 2. [Escopo](#escopo)
 3. [Variáveis](#variaveis)
 4. [Arrow Functions](#arrowfunc)
+5. [Manipulação de Strings](#manipulacao_string)
 
 <h2 id="hoisting">Hoisting :fishing_pole_and_fish:</h2>
 
@@ -31,7 +32,6 @@ A função foi chamada antes mesmo de ser declarada, mas funciona.
 O mesmo acontece para variáveis, mas nesse caso, o javascript eleva as declarações, não as inicializações.
 
 ```js
-
     console.log(num); // OUTPUT: undefined --> só foi declarada
     var num;
     num = 6;
@@ -40,7 +40,6 @@ O mesmo acontece para variáveis, mas nesse caso, o javascript eleva as declara�
 ```
 
 ```js
-
     num = 6; // inicialização
     console.log(num); // OUTPUT: 6;
     var num; // declaração
@@ -56,7 +55,6 @@ Em outras palavras, o que determina quais são os dados que podem ser acessados 
 Imagine que o escopo é uma caixa e tudo que for criado nessa caixa pode ser acessado por qualquer objeto dentro da mesma. Um escopo é criado sempre que definimos uma função:
 
 ```js
-
     function hello(name) {
         // Isto aqui é um escopo
     }
@@ -72,7 +70,6 @@ Imagine que o escopo é uma caixa e tudo que for criado nessa caixa pode ser ace
     * Uma variável se torna local quando ela é declarada dentro de uma função, de tal maneira a qual ela somente estará <strong> acessível dentro dessa função.</strong>
 
     ```js
-
         function foo() {
             var name = 'Gabriela'
             let color = 'Blue'
@@ -89,26 +86,20 @@ Imagine que o escopo é uma caixa e tudo que for criado nessa caixa pode ser ace
         //    Conclusão: name, color e age não existem fora do escopo da função foo. 
         //Isso significa, que podemos ter múltiplas funções com variáveis e constantes com o mesmo nome, mas que retornarão valores diferentes.
 
+        function color() {
+            const color = 'pink'
+            console.log(color) // pink
+        }
+
+        function color2() {
+            const color = 'yellow'
+            console.log(color) //yellow
+        }
+
+        color();
+        color2();
     ```
 
-
-
-```js
-
-    function color() {
-        const color = 'pink'
-        console.log(color) // pink
-    }
-
-    function color2() {
-        const color = 'yellow'
-        console.log(color) //yellow
-    }
-
-    color();
-    color2();
-
-```
 
 
 
@@ -121,7 +112,6 @@ Imagine que o escopo é uma caixa e tudo que for criado nessa caixa pode ser ace
     * Todo escopo é fechado para acessos externos, de forma que escopos superiores não conseguem acessar escopos internos, mas o contrário é permitido.
 
     ```js
-
     function foo() {
         function bar() {
 
@@ -180,7 +170,6 @@ Imagine que o escopo é uma caixa e tudo que for criado nessa caixa pode ser ace
 Uma nova forma de escrita de uma função, sempre é uma função anônima
 
 ```js
-
 const sum = (number1, number2) => {
     return number1 + number2;
 }
@@ -194,7 +183,6 @@ console.log(sum(10,2)) // OUTPUT: 12
     * Se você usa uma arrow function sem as chaves, consegue retornar sem usar a <em>keyword</em> return
 
     ```js
-
     const sum = (number1,number2) => number1 + number2;
 
     console.log(sum(10, 2)) // OUTPUT: 12
@@ -204,7 +192,6 @@ console.log(sum(10,2)) // OUTPUT: 12
 * sem parâmetros
 
     ```js
-
     const myName = () => 'Gabriela';
 
     console.log(myName()); // OUTPUT: Gabriela
@@ -216,7 +203,6 @@ console.log(sum(10,2)) // OUTPUT: 12
 
     ```js 
         //com parênteses
-
         const double = (number) => number * 2;
         console.log(double(20)) // OUTPUT: 40
 
@@ -234,3 +220,83 @@ console.log(sum(10,2)) // OUTPUT: 12
         console.log(getPerson());
 
     ```
+
+
+<h2 id="manipulacao_string">Manipulação de Strings :exclamation:</h2>
+
+* Propriedade
+    * length -> retorna tamanho da string
+* Métodos 
+    * toLowerCase -> coloca todas as letras da string em minúsculas
+    ```js
+    let name = 'GABRIELA';
+    console.log(name.toLowerCase()) // OUTPUT: gabriela
+    ```
+
+    * toUpperCase -> coloca todas as letras da string em maiúsculas
+
+    ```js 
+    let name = 'Gabriela';
+    console.log(name.toUpperCase()) // OUTPUT: GABRIELA
+
+    ```
+
+    * trim -> remove os espaços em branco do início ou do final da string, se existir
+
+    ```js
+    let name = '   Gabriela    '
+    console.log(name.length) // OUTPUT: 15 - length conta os espaços
+    name = name.trim(); //reatribuição retirando os espaços
+    console.log(name.length) // OUTPUT: 8
+
+    ```
+
+    * padStart/padEnd -> para preencher uma string com um determinado caractere. 
+        * O primeiro parâmetro é o comprimento que a string deverá ter depois de preenchida e o segundo é com qual caractere a string será preenchida
+
+    ```js
+    let number = "5025";
+    let newNumber = number.padStart(9, "*");
+    console.log(newNumber); // OUTPUT: *****5025
+    ```
+
+    * replace -> quando é necessário substituir uma substring dentro de um texto por outra. O método replace procura a primeira vez em que o termo do primeiro parâmetro aparece no texto e substitui pelo termo do segundo parâmetro
+
+    ```js
+    let texto = "A linguagem PHP é muito poderosa";
+    let resultado = texto.replace('PHP', 'Javascript')
+    ```
+
+    * substr -> método nativo que extrai uma substring dentro de uma string. 
+        * Parâmetros: posição de inicio da substring a ser extraída, e quantidade de caracteres da substring
+    ```js
+    let frase = 'Meu nome é Gabriela';
+    frase.substr(11, 8); // OUTPUT: Gabriela
+    ```
+
+    * substring -> método nativo que extrai uma substring dentro de uma string. 
+        * Parâmetros: posição inicial da substring a ser extraída, posição final da substring a ser extraída.
+
+    ```js
+    let frase = 'Meu nome é Gabriela';
+    frase.substring(11, 19); // OUTPUT: Gabriela
+    ```
+    * indexOf -> pesquisar por uma substring dentro de uma string. 
+        * Retorna posição inicial da substring dentro da string. E, se não achar, retornará -1
+
+    ```js
+    let frase = 'Meu nome é Gabriela';
+    frase.indexOf('Gabriela') // OUTPUT: 11
+    frase.indexOf('Javascript') // OUTPUT: -1 (Não encontrado)
+    ```
+
+    * split -> método que vai quebrar a string em diversas partes
+        * Parâmetro: caractere (toda vez que o método encontrar esse caractere na string, ela irá ser quebrada)
+        * saída sempre será um array
+
+    ```js
+    let name = 'Gabriela Menezes'
+    let array = name.split(" ") // OUTPUT: ["Gabriela", "Menezes"]
+    console.log(array[0]) // OUTPUT: Gabriela
+    ``` 
+
