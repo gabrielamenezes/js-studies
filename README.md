@@ -3,7 +3,13 @@ O objetivo desse repositório é organizar algumas teorias importantes do javasc
 
 <em>Inspiration: [@isadorastan - estudos repository](https://github.com/isadorastan/estudos)</em>
 
-## Hoisting :fishing_pole_and_fish:
+## Sumário
+1. [Hoisting](#hoisting)
+2. [Escopo](#escopo)
+3. [Variáveis](#variaveis) 
+
+<h2 id="hoisting">Hoisting :fishing_pole_and_fish:</h2>
+
 ### O que é o hoisting?
 É o conceito de que as declarações de variável e função são colocadas na memória durante a fase de compilação, mas permanecem exatamente onde você as digitou. Isso, permite que você use uma função ou variável antes mesmo de declará-la.
 
@@ -41,7 +47,8 @@ O mesmo acontece para variáveis, mas nesse caso, o javascript eleva as declara�
 
 ```
 
-## Escopo :mailbox:
+<h2 id="escopo">Escopo :mailbox:</h2>
+
 ### O que é um escopo?
 Escopo é a acessibilidade de objetos, variáveis e funções em diferentes partes do código.
 Em outras palavras, o que determina quais são os dados que podem ser acessados em uma determinada parte do código é o escopo.
@@ -124,4 +131,4 @@ Imagine que o escopo é uma caixa e tudo que for criado nessa caixa pode ser ace
 
     Quando criamos outra função dentro da função foo, estamos colocando outra caixa dentro do escopo da função.
 
-## Variáveis :package:
+<h2 id="variaveis">Variáveis :package:</h2>
