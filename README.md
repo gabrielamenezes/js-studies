@@ -10,6 +10,8 @@ O objetivo desse repositório é organizar algumas teorias importantes do javasc
 4. [Arrow Functions](#arrowfunc)
 5. [Manipulação de Strings](#manipulacao_string)
 
+[Clique aqui para ir à pasta de estudos práticos](praticas/README.md)
+
 <h2 id="hoisting">Hoisting :fishing_pole_and_fish:</h2>
 
 ### O que é o hoisting?
