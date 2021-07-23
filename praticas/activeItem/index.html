@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <ul>
+        <li class="item" data="service">Serviços</li>
+        <li class="item" data="contact">Contato</li>
+        <li class="item" data="info">Infomração</li>
+    </ul>
+
+    <script>
+        const items = Array.from(document.getElementsByClassName('item'));
+
+        items.forEach(item => {
+            item.addEventListener('click', onItemClick)
+        })
+
+        function onItemClick(event) { 
+            //saber qual é o data de quem eu cliquei
+            const selectedAttribute = event.target.getAttribute('data');
+
+            items.forEach(item => {
+                const itemAttribute = item.getAttribute('data')
+
+                if(itemAttribute == selectedAttribute) {
+                    item.classList.add('active');
+                    return;
+                }
+
+                item.classList.remove('active');
+            })
+
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,18 @@
+ul {
+    list-style: none;
+    display: flex;
+    padding: 0;
+    justify-content: space-around;
+
+    width: 400px;
+    margin: 100px auto;
+}
+
+ul li {
+    height: 25px;
+    padding: 0 10px;
+}
+.active {
+    color: red;
+    border-bottom: 1px solid red;
+}
