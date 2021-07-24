@@ -9,7 +9,7 @@ O objetivo desse repositório é organizar algumas teorias importantes do javasc
 3. [Variáveis](#variaveis)
 4. [Arrow Functions](#arrowfunc)
 5. [Manipulação de Strings](#manipulacao_string)
-6. [Manipulação de Arrays](manipulacao_array)
+6. [Manipulação de Arrays](#manipulacao_array)
 
 [Clique aqui para ir à pasta de estudos práticos](praticas/README.md)
 
@@ -337,5 +337,5 @@ console.log(sum(10,2)) // OUTPUT: 12
                 items.splice(0, 1, "Molho de Tomate", "Orégano", "Queijo Ralado")
 
                 console.log(items) //OUTPUT: ["Molho de Tomate", "Orégano", "Queijo Ralado", "Feijão", "Macarrão"]
-
             ```
+
