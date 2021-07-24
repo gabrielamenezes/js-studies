@@ -340,8 +340,8 @@ console.log(sum(10,2)) // OUTPUT: 12
             ```
 * forEach
     - Responsável por percorrer **todos** os itens de um array e executar uma determinada função
-    1. ForEach recebe uma _Função Callback_(Veja em [Glossário](#glossary)) como parâmetro
-        2. A função de callback, por sua vez, também pode receber parâmetros - são 3: valorAtual, índice e array
+        * ForEach recebe uma _Função Callback_(Veja em [Glossário](#glossary)) como parâmetro
+            * A função de callback, por sua vez, também pode receber parâmetros - são 3: valorAtual, índice e array
 
         ```js
             let person = [
