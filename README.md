@@ -9,6 +9,7 @@ O objetivo desse repositório é organizar algumas teorias importantes do javasc
 3. [Variáveis](#variaveis)
 4. [Arrow Functions](#arrowfunc)
 5. [Manipulação de Strings](#manipulacao_string)
+6. [Manipulação de Arrays](manipulacao_array)
 
 [Clique aqui para ir à pasta de estudos práticos](praticas/README.md)
 
@@ -301,4 +302,40 @@ console.log(sum(10,2)) // OUTPUT: 12
     let array = name.split(" ") // OUTPUT: ["Gabriela", "Menezes"]
     console.log(array[0]) // OUTPUT: Gabriela
     ``` 
+<h2 id="manipulacao_array">Manipulação de Array :exclamation:</h2>
 
+* slice && splice 
+    - slice (fatia) - O método slice() retorna uma cópia de parte de um array a partir de um subarray criado entre as posições início e fim (fim não é necessário) de um array original
+        * O array original **NÃO É ALTERADO**
+        ```js
+            //Extrair frutas
+            let lista = ['Banana', 'Maçã', 'Pêra', 'Mamão', 'Melancia', 'Arroz', 'Feijão', 'Macarrão', 'Ovos']
+
+            let frutas = lista.slice(0, 5)
+            console.log(frutas) // OUTPUT: ['Banana', 'Maçã', 'Pêra', 'Mamão', Melancia];
+
+            console.log(lista) // OUTPUT: ['Banana', 'Maçã', 'Pêra', 'Mamão', 'Melancia', 'Arroz', 'Feijão', 'Macarrão', 'Ovos'] 
+        ```
+    - splice: O método splice() **altera o conteúdo** de uma lista, adicionando novos elementos enquanto remove elementos antigos
+        * Parâmetros: índice, deleteCount, elemento1, ...., elementoN
+            - **índice:** indica o indice o qual deve iniciar a alterar a lista
+            - **deleteCount:** indica o número de elementos a serem removidos a partir do indice inicial (primeiro parâmetro)
+            - **elemento1,...elementoN:** Os elementos que serão adicionados na lista
+
+            ```js
+                const items = ["Arroz", "Feijão", "Macarrão"]
+                // a partir do 1 estou adicionando carne e tomate. E não remove nada
+                items.splice(1, 0, "Carne", "Tomate")
+
+                console.log(items) // OUTPUT: ["Arroz", "Carne", "Tomate", "Feijão", "Macarrão"]
+
+                //deletando 2 itens a partir do item 1
+                items.splice(1, 2)
+                console.log(items) //  OUTPUT: ["Arroz", "Feijão", "Macarrão"]
+
+                // Adicionando os itens no index 1 em diante 
+                items.splice(0, 1, "Molho de Tomate", "Orégano", "Queijo Ralado")
+
+                console.log(items) //OUTPUT: ["Molho de Tomate", "Orégano", "Queijo Ralado", "Feijão", "Macarrão"]
+
+            ```
