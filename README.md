@@ -372,6 +372,20 @@ console.log(sum(10,2)) // OUTPUT: 12
                 // 4 iteração - 4
             })
         ```
+* Map
+    - Também é responsável por percorrer todos os itens de um array, mas retorna um array do mesmo tamanho do original com alguma modificação feita
+        * Map recebe uma _Função Callback_(Veja em [Glossário](#glossary)) como parâmetro
+            * A função de callback, por sua vez, também pode receber parâmetros - são 3: valorAtual, índice e array
+
+            ```js
+                let numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+                //tabuada de 2
+                numbers.map(number => number * 2) // OUTPUT: [2, 4, 6, 8, 10, 12, 14, 16, 18, 20]
+
+                let names = ["Gabriela", "Pedro", "Maria Eduarda", "Ana Beatriz"]
+                names.map(name => `${name} Menezes`) // OUTPUT: ["Gabriela Menezes", "Pedro Menezes", "Maria Eduarda Menezes", "Ana Beatriz Menezes"]
+            ```
+
 
 
 
