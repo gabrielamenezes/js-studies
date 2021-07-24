@@ -338,4 +338,46 @@ console.log(sum(10,2)) // OUTPUT: 12
 
                 console.log(items) //OUTPUT: ["Molho de Tomate", "Orégano", "Queijo Ralado", "Feijão", "Macarrão"]
             ```
+* forEach
+    - Responsável por percorrer **todos** os itens de um array e executar uma determinada função
+    1. ForEach recebe uma _Função Callback_(Veja em [Glossário](#glossary)) como parâmetro
+        2. A função de callback, por sua vez, também pode receber parâmetros - são 3: valorAtual, índice e array
 
+        ```js
+            let person = [
+                {nome: Gabriela},
+                {nome: Menezes},
+                {nome: Andrade},
+                {nome: Mendes}
+            ];
+
+            // O valorAtual na primeira iteração é referente ao valor da primeira posição do nosso array
+            // O valorAtual na segunda iteração é referente ao valor da segunda posição do nosso array 
+            // O valorAtual na terceira iteração é referente ao valor da terceira posição do nosso array
+
+            // O índice é referente ao índice de posição do array
+
+            //meuArray não muda a cada iteração, ele só é uma referencia àquele que chamou função ForEach
+            person.ForEach((valorAtual, indice, meuArray) => {
+                console.log(valorAtual)
+                // 1 iteração: {nome: Gabriela}
+                // 2 iteração: {nome: Menezes}
+                // 3 iteração: {nome: Andrade}
+                // 4 iteração: {nome: Mendes}
+
+                console.log(indice)
+                // 1 iteração - 0
+                // 2 iteração - 1
+                // 3 iteração - 2
+                // 4 iteração - 4
+            })
+        ```
+
+
+
+
+
+
+<h2 id="glossary">Glossário :notebook:</h2>
+
+* Função CallBack - Uma função callback é uma função passada a outra função como argumento 
