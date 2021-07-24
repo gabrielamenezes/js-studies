@@ -9,14 +9,29 @@
 </head>
 <body>
     <ul>
-        <li class="item" data="service">Serviços</li>
+        <li class="item active" data="service">Serviços</li>
         <li class="item" data="contact">Contato</li>
         <li class="item" data="info">Infomração</li>
     </ul>
 
+    <div id="serviceText"><p>service Text</p></div>
+    <div id="contactText"><p>contact Text</p></div>
+    <div id="infoText"><p>infoText</p></div>
+
+
+
     <script>
+        //pegando textos das divs
+        const serviceText = document.getElementById('serviceText'); 
+        const contactText = document.getElementById('contactText'); 
+        const infoText = document.getElementById('infoText');
+        showOrHideTextDiv('service')
+
+
+        // transformar itens 
         const items = Array.from(document.getElementsByClassName('item'));
 
+        //add eventListener em cada item de items
         items.forEach(item => {
             item.addEventListener('click', onItemClick)
         })
@@ -24,18 +39,43 @@
         function onItemClick(event) { 
             //saber qual é o data de quem eu cliquei
             const selectedAttribute = event.target.getAttribute('data');
+             //passando selectedAtrribute como parâmetro porque é uma variável de escopo local
+            addOrRemoveActive(selectedAttribute);
+            showOrHideTextDiv(selectedAttribute);
 
+        }
+        function showOrHideTextDiv(selectedAtrribute) {
+            hideTextElements(); // chama a função
+
+            if(selectedAtrribute === 'service') {
+                serviceText.style.display = 'block';
+            }
+
+            if(selectedAtrribute === 'contact') {
+                contactText.style.display = 'block';
+            }
+
+            if(selectedAtrribute === 'info') {
+                infoText.style.display = 'block';
+            }
+        }
+        function addOrRemoveActive(selectedAttribute) {
+            //roda a arrow function para cada item de itens
             items.forEach(item => {
-                const itemAttribute = item.getAttribute('data')
-
+                const itemAttribute = item.getAttribute('data') //pega todos os atributos 
                 if(itemAttribute == selectedAttribute) {
                     item.classList.add('active');
                     return;
                 }
 
                 item.classList.remove('active');
-            })
-
+            });
+        }
+        function hideTextElements() {
+            //esconde todos os elementos
+            serviceText.style.display = 'none';
+            contactText.style.display = 'none';
+            infoText.style.display = 'none';
         }
     </script>
 </body>
