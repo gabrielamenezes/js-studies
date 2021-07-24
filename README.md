@@ -397,9 +397,30 @@ console.log(sum(10,2)) // OUTPUT: 12
             {name: 'Drake', age: '30', contry: 'Estados Unidos'}
         ];
 
-        console.log(person.find(item => country === 'Estados Unidos')) 
+        console.log(person.find(item => item.country === 'Estados Unidos')) 
         //OUTPUT: {name: 'Dylan', age: '20', contry: 'Estados Unidos'} 
     ```
+
+* Filter
+    - O método filter() cria um novo array com todos os elementos que passaram no teste implementado pela função fornecida.
+
+    Ou seja, usando o mesmo exemplo do método anterior. Nesse caso, o retorno seria:
+    ```js
+        let person = [
+            {name: 'Gabriela', age: '22', contry: 'Brasil'}
+            {name: 'Dylan', age: '20', contry: 'Estados Unidos'}
+            {name: 'Luke', age: '15', contry: 'Canada'}
+            {name: 'Drake', age: '30', contry: 'Estados Unidos'}
+        ];
+
+        console.log(person.filter(item => item.country === 'Estados Unidos')) 
+        /*OUTPUT: 
+        [
+        {name: 'Dylan', age: '20', contry: 'Estados Unidos'},
+        {name: 'Drake', age: '30', contry: 'Estados Unidos'}
+        ] */
+    ```
+    
 
 
 
