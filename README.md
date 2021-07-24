@@ -386,7 +386,20 @@ console.log(sum(10,2)) // OUTPUT: 12
                 names.map(name => `${name} Menezes`) // OUTPUT: ["Gabriela Menezes", "Pedro Menezes", "Maria Eduarda Menezes", "Ana Beatriz Menezes"]
             ```
 
+* Find
+    - O méetodo find() itera sobre elementos de um array e **retorna o valor do primeiro elemento** que satisfazer a função de teste provida 
 
+    ```js
+        let person = [
+            {name: 'Gabriela', age: '22', contry: 'Brasil'}
+            {name: 'Dylan', age: '20', contry: 'Estados Unidos'}
+            {name: 'Luke', age: '15', contry: 'Canada'}
+            {name: 'Drake', age: '30', contry: 'Estados Unidos'}
+        ];
+
+        console.log(person.find(item => country === 'Estados Unidos')) 
+        //OUTPUT: {name: 'Dylan', age: '20', contry: 'Estados Unidos'} 
+    ```
 
 
 
